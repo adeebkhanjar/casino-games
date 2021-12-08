@@ -1,0 +1,359 @@
+:root {
+    --toastify-color-success: #07bc0c;
+}
+
+body {
+    background-color: #e81e24;
+    min-height: 100vh;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: no-repeat center center/cover url(./Helpers/img/bg3.jpg);
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+* {
+    box-sizing: border-box;
+    font-weight: 600;
+}
+
+nav {
+    background: linear-gradient(to bottom, #b01f24, #e81e24, #b01f24);
+    height: 6vh;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 2rem;
+    color: whitesmoke;
+    font-weight: 600;
+}
+
+nav div {
+    display: inherit;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1rem;
+    cursor: pointer;
+}
+
+.sign-out:hover {
+    background: linear-gradient(to bottom, #b32b2f, #e93036, #b32b2f);
+}
+
+.logo {
+    height: 100%;
+    width: 4rem;
+    background: no-repeat center center/cover url("./Helpers/img/logo.webp");
+    animation: spin 4s infinite linear;
+}
+
+.logo>div p {
+    margin: 0 1rem;
+}
+
+.logo:hover {
+    animation: spin 1s infinite linear;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.login-div {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: no-repeat center center/cover url("./Helpers/img/login4.jpg");
+}
+
+.login-div .inner {
+    background-color: #0cb2c4ab;
+    /* background-color: #07b0ffa8; */
+    padding: 3rem;
+    border-radius: 1rem;
+    width: 20vw;
+    min-width: 500px;
+}
+
+label {
+    font-weight: 600;
+    font-size: large;
+    color: white;
+}
+
+input {
+    width: 100%;
+    height: 2rem;
+    background-color: transparent;
+    background: none;
+    border: none;
+    border-bottom: #e81e2499 solid 2px;
+}
+
+input:focus {
+    outline: none;
+    background-color: transparent;
+}
+
+input::selection,
+input::selection::-moz-selection {
+    background: none;
+    background-color: transparent;
+    color: white;
+}
+
+button {
+    color: white;
+    background-color: #e81e24;
+    width: 100%;
+    border: none;
+    height: 2rem;
+    margin-top: 1rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+button:hover {
+    transform: scale(1.02);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+.status-bar p {
+    margin: 0 1vmin;
+}
+
+.home-container {
+    min-height: 94vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.game {
+    margin: 5vmin;
+    box-shadow: black 0 0 0.5rem 0.2rem;
+    width: 300px;
+    height: 300px;
+    border-radius: 1rem;
+    cursor: pointer;
+}
+
+.game:hover {
+    transform: scale(1.02);
+}
+
+.game:active {
+    transform: scale(0.98);
+}
+
+.roulette {
+    background: no-repeat center center/cover url("./Helpers/img/login3.jpg");
+}
+
+.back:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    color: black;
+}
+
+
+/* .wheel {
+    width: 30vw;
+} */
+
+.game-container {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.roulette-btn {
+    box-shadow: black 0 0 0.3rem 0.02rem;
+}
+
+.the-wheel {
+    background: no-repeat center center/cover url("./Helpers/img/thewheel.png");
+}
+
+.wheel-bets div {
+    width: 80px;
+    height: 50px;
+    border: black solid 2px;
+    margin: 0.2rem;
+    color: black;
+}
+
+.craps-bet {
+    box-shadow: black 0 0 0.3rem 0.02rem;
+    margin: 0.5rem;
+    color: black;
+    border-radius: 0.5rem;
+    background-color: #e81e24;
+    padding: 0 1rem;
+}
+
+.wheel-bets {
+    margin: 1rem;
+    display: flex;
+}
+
+.wheel-bets div:nth-child(1) {
+    background-color: yellow;
+}
+
+.wheel-bets div:nth-child(2) {
+    background-color: green;
+}
+
+.wheel-bets div:nth-child(3) {
+    background-color: blue;
+}
+
+.wheel-bets div:nth-child(4) {
+    background-color: purple;
+}
+
+.wheel-bets div:nth-child(5) {
+    background-color: red;
+}
+
+input[type="number"] {
+    border: none;
+    color: black;
+}
+
+.craps {
+    background: no-repeat center center/cover url("./Helpers/img/cardsd.png");
+}
+
+.crap-container {
+    width: 500px;
+}
+
+.roullete-bet {
+    width: 40px;
+    height: 50px;
+    color: white;
+    outline: white 1px solid;
+}
+
+.red {
+    background-color: red;
+}
+
+.black {
+    background-color: black;
+}
+
+.roullete-bets-inner {
+    width: 100px;
+    height: 40px;
+    outline: white 1px solid;
+    text-align: center;
+    color: white;
+}
+
+.slot-div-cont {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+
+.slot-div {
+    border: gold solid 2vmin;
+    width: 200px;
+    height: 200px;
+    background-color: white;
+}
+
+.slot {
+    background: no-repeat center center/cover url("./Helpers/img/slotlogo.jpg");
+}
+
+.cherry {
+    background: no-repeat center center/cover url("./Helpers/img/cherry.jpg");
+}
+
+.bar {
+    background: no-repeat center center/cover url("./Helpers/img/bar.jpg");
+}
+
+.bell {
+    background: no-repeat center center/cover url("./Helpers/img/bell.jpg");
+}
+
+.coin {
+    background: no-repeat center center/cover url("./Helpers/img/coin.jpg");
+}
+
+.crown {
+    background: no-repeat center center/cover url("./Helpers/img/crown.jpg");
+}
+
+.diamond {
+    background: no-repeat center center/cover url("./Helpers/img/diamond.jpg");
+}
+
+.dices {
+    background: no-repeat center center/cover url("./Helpers/img/dice.jpg");
+}
+
+.grapes {
+    background: no-repeat center center/cover url("./Helpers/img/grapes.jpg");
+}
+
+.horseshoe {
+    background: no-repeat center center/cover url("./Helpers/img/horseshoe.jpg");
+}
+
+.leaf {
+    background: no-repeat center center/cover url("./Helpers/img/leaf.jpg");
+}
+
+.seven {
+    background: no-repeat center center/cover url("./Helpers/img/seven.jpg");
+}
+
+.strawberry {
+    background: no-repeat center center/cover url("./Helpers/img/strawberry.jpg");
+}
+
+.collector {
+    background: no-repeat center center/cover url("./Helpers/img/collector.jpg.png");
+}
+
+.margin-top {
+    margin-top: 3rem;
+}
+
+.blackjack {
+    background: no-repeat center center/cover url("./Helpers/img/blackjack.png");
+}
+
+.bj-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    padding: 3rem;
+}
