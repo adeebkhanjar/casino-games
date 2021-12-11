@@ -160,6 +160,7 @@ export default function Slot({ user, slotCallBack, fundsCallBack }) {
   if (!localStorage.getItem("token")) return navigate("/login");
   const spinHandle = () => {
     if (bet > user.money) return fundsCallBack(true);
+    if (bet === 0) return;
     setBtn(false);
     const handle = setInterval(() => {
       setSlot1(reel[Math.floor(Math.random() * reel.length)]);

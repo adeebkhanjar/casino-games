@@ -249,11 +249,16 @@ export default function Roulette({ user, rouletteCallBack, fundsCallBack }) {
       }) > userMoney
     ) {
       return fundsCallBack(true);
-    } else {
-      const newPrizeNumber = Math.floor(Math.random() * data.length);
-      setPrizeNumber(newPrizeNumber);
-      setMustSpin(true);
     }
+    if (
+      Object.values(userBets).reduce((sum = 0, value) => {
+        return (sum += value);
+      }) === 0
+    )
+      return;
+    const newPrizeNumber = Math.floor(Math.random() * data.length);
+    setPrizeNumber(newPrizeNumber);
+    setMustSpin(true);
   };
   const handleCheckWin = async () => {
     let prizeMoneyCalc = 0;

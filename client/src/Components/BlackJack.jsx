@@ -343,7 +343,7 @@ export default function BlackJack({ user, fundsCallBack, blackJackCallBack }) {
   };
   const handleStand = () => {
     setStand(true);
-    if (dealerSum < 16) {
+    if (dealerSum < 16 || dealerSum < playerSum) {
       setDealerCards([
         ...dealerCards,
         deck[playerCards.length + dealerCards.length],

@@ -45,9 +45,11 @@ export default function TheWheel({ user, WheelCallBack, fundsCallBack }) {
   const handleSpinClick = () => {
     if (one + three + five + ten + twenty > user.money)
       return fundsCallBack(true);
-    const newPrizeNumber = Math.floor(Math.random() * data.length);
-    setPrizeNumber(newPrizeNumber);
-    setMustSpin(true);
+    if (one + three + five + ten + twenty > 0) {
+      const newPrizeNumber = Math.floor(Math.random() * data.length);
+      setPrizeNumber(newPrizeNumber);
+      setMustSpin(true);
+    }
   };
   const handleCheckWin = async () => {
     switch (data[prizeNumber].option) {

@@ -28,7 +28,9 @@ export default function Craps({
   };
   const rollAll = () => {
     if (bet > user.money) return fundsCallBack(true);
-    reactDice.rollAll();
+    if (bet > 0) {
+      reactDice.rollAll();
+    }
   };
   return (
     <div className="game-container ">
