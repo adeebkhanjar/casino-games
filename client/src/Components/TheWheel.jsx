@@ -31,7 +31,7 @@ const data = [
   { option: "x1", style: { backgroundColor: "yellow", textColor: "black" } },
 ];
 
-export default function TheWheel({ user, WheelCallBack }) {
+export default function TheWheel({ user, WheelCallBack, fundsCallBack }) {
   const [mustSpin, setMustSpin] = useState(false);
   const [prizeNumber, setPrizeNumber] = useState(0);
   const [one, setXone] = useState(0);
@@ -43,6 +43,8 @@ export default function TheWheel({ user, WheelCallBack }) {
 
   if (!localStorage.getItem("token")) return navigate("/login");
   const handleSpinClick = () => {
+    if (one + three + five + ten + twenty > user.money)
+      return fundsCallBack(true);
     const newPrizeNumber = Math.floor(Math.random() * data.length);
     setPrizeNumber(newPrizeNumber);
     setMustSpin(true);

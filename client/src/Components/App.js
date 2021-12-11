@@ -51,11 +51,12 @@ export default function App() {
   }, [user]);
   return (
     <div>
+      {" "}
       {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
+                        renders the first one that matches the current URL. */}{" "}
       <Routes>
-        <Route path="/register" element={<Register />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />{" "}
+        <Route path="/login" element={<Login />} />{" "}
         <Route
           path="/"
           element={<Home user={user} userCallBack={(user) => setUser(user)} />}
@@ -64,41 +65,64 @@ export default function App() {
             path="/roulette"
             element={
               <Roulette
+                fundsCallBack={() => {
+                  toast(`insufficient funds`);
+                }}
                 rouletteCallBack={(sum) => handleMoney(sum)}
                 user={user}
               />
             }
           />
-
           <Route
             path="/wheel"
             element={
-              <TheWheel WheelCallBack={(sum) => handleMoney(sum)} user={user} />
+              <TheWheel
+                fundsCallBack={() => {
+                  toast(`insufficient funds`);
+                }}
+                WheelCallBack={(sum) => handleMoney(sum)}
+                user={user}
+              />
             }
-          />
+          />{" "}
           <Route
             path="/craps"
             element={
-              <Craps crapsCallBack={(sum) => handleMoney(sum)} user={user} />
+              <Craps
+                fundsCallBack={() => {
+                  toast(`insufficient funds`);
+                }}
+                crapsCallBack={(sum) => handleMoney(sum)}
+                user={user}
+              />
             }
-          />
+          />{" "}
           <Route
             path="/slot"
             element={
-              <Slot slotCallBack={(sum) => handleMoney(sum)} user={user} />
+              <Slot
+                fundsCallBack={() => {
+                  toast(`insufficient funds`);
+                }}
+                slotCallBack={(sum) => handleMoney(sum)}
+                user={user}
+              />
             }
-          />
+          />{" "}
           <Route
             path="/blackjack"
             element={
               <BlackJack
+                fundsCallBack={() => {
+                  toast(`insufficient funds`);
+                }}
                 blackJackCallBack={(sum) => handleMoney(sum)}
                 user={user}
               />
             }
-          />
-        </Route>
-      </Routes>
+          />{" "}
+        </Route>{" "}
+      </Routes>{" "}
       <ToastContainer />
     </div>
   );

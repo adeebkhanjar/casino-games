@@ -3,7 +3,12 @@ import ReactDice from "react-dice-complete";
 import "react-dice-complete/dist/react-dice-complete.css";
 import Popup from "reactjs-popup";
 import "reactjs-popup/dist/index.css";
-export default function Craps({ reactDice, user, crapsCallBack }) {
+export default function Craps({
+  reactDice,
+  user,
+  crapsCallBack,
+  fundsCallBack,
+}) {
   const [number, setNumber] = useState("");
   const [bet, setBet] = useState(0);
   const rollDoneCallback = (num) => {
@@ -22,6 +27,7 @@ export default function Craps({ reactDice, user, crapsCallBack }) {
     }
   };
   const rollAll = () => {
+    if (bet > user.money) return fundsCallBack(true);
     reactDice.rollAll();
   };
   return (

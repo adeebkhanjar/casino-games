@@ -231,7 +231,7 @@ const sortedData = [...data].sort(
 );
 const arr1 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 
-export default function Roulette({ user, rouletteCallBack }) {
+export default function Roulette({ user, rouletteCallBack, fundsCallBack }) {
   const [mustSpin, setMustSpin] = useState(false);
   const [prizeNumber, setPrizeNumber] = useState(0);
   const [userMoney, setUserMoney] = useState(0);
@@ -248,6 +248,7 @@ export default function Roulette({ user, rouletteCallBack }) {
         return (sum += value);
       }) > userMoney
     ) {
+      return fundsCallBack(true);
     } else {
       const newPrizeNumber = Math.floor(Math.random() * data.length);
       setPrizeNumber(newPrizeNumber);

@@ -17,7 +17,7 @@ const reel = [
   "leaf",
   "collector",
 ];
-export default function Slot({ user, slotCallBack }) {
+export default function Slot({ user, slotCallBack, fundsCallBack }) {
   const [btn, setBtn] = useState(true);
   const [bet, setBet] = useState(0);
   const [temp, setTemp] = useState(true);
@@ -159,6 +159,7 @@ export default function Slot({ user, slotCallBack }) {
 
   if (!localStorage.getItem("token")) return navigate("/login");
   const spinHandle = () => {
+    if (bet > user.money) return fundsCallBack(true);
     setBtn(false);
     const handle = setInterval(() => {
       setSlot1(reel[Math.floor(Math.random() * reel.length)]);
