@@ -305,7 +305,7 @@ export default function BlackJack({ user, fundsCallBack, blackJackCallBack }) {
     }
     setDealerSum(sum);
     if (sum > 21) return handleEnd(true);
-    if (sum > playerSum && sum > 16 && stand) return handleEnd(false);
+    if (sum >= playerSum && sum > 16 && stand) return handleEnd(false);
     if (stand) {
       setTimeout(() => {
         handleStand();
