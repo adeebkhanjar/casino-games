@@ -43,7 +43,14 @@ export default function TheWheel({ user, WheelCallBack, fundsCallBack }) {
 
   if (!localStorage.getItem("token")) return navigate("/login");
   const handleSpinClick = () => {
-    if (one + three + five + ten + twenty > user.money)
+    if (
+      parseInt(one) +
+        parseInt(three) +
+        parseInt(five) +
+        parseInt(ten) +
+        parseInt(twenty) >
+      parseInt(user.money)
+    )
       return fundsCallBack(true);
     if (one + three + five + ten + twenty > 0) {
       const newPrizeNumber = Math.floor(Math.random() * data.length);
